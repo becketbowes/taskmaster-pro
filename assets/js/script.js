@@ -83,7 +83,7 @@ $("#task-form-modal .btn-primary").click(function() {
   }
 });
 
-let currentTask = {
+var currentTask = {
   taskElement: undefined,
   propertyElement: undefined,
   index: undefined
@@ -94,7 +94,7 @@ $("#list-toDo").on("click", "li > span", function(event) {
   // if the date span does not already have an input element inside
   if (event.currentTarget.firstElementChild === null) {
     // get an array of tasks
-    let parentChildren = Array.from(event.currentTarget.childNodes);
+    var parentChildren = Array.from(event.currentTarget.childNodes);
 
     // get index of the current task inside the childNodes of #list-toDo
     currentTask.index = parentChildren.indexOf(event.currentTarget);
@@ -128,7 +128,7 @@ $("#list-toDo").on("click", "li > p", function(event) {
   // if the description paragraph does not already have an input element inside
   if (event.currentTarget.firstElementChild === null) {
     // get an array of tasks
-    let parentChildren = Array.from(event.currentTarget.childNodes);
+    var parentChildren = Array.from(event.currentTarget.childNodes);
 
     // get index of the current task inside the childNodes of #list-toDo
     currentTask.index = parentChildren.indexOf(event.currentTarget);
@@ -168,9 +168,9 @@ $(".stop-editing").on("click", function() {
   
   // update the tasks toDo list
   tasks.toDo = tasks.toDo.map(function(task, toDoTaskIndex) {
-    let { taskElement, index } = currentTask;
-    let parentChildren = Array.from(taskElement.parentNode.childNodes);
-    let currentTaskIndex = parentChildren.indexOf(taskElement);
+    var { taskElement, index } = currentTask;
+    var parentChildren = Array.from(taskElement.parentNode.childNodes);
+    var currentTaskIndex = parentChildren.indexOf(taskElement);
 
     if (currentTaskIndex -1 === toDoTaskIndex) {
       return {
